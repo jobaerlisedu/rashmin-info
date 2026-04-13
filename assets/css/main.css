@@ -1,3 +1,15 @@
+/**
+* Template Name: iPortfolio
+* Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+* Updated: Jun 29 2024 with Bootstrap v5.3.3
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
+
+/*--------------------------------------------------------------
+# Font & Color Variables
+# Help: https://bootstrapmade.com/color-system/
+--------------------------------------------------------------*/
 /* Fonts */
 :root {
   --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -9,33 +21,34 @@
 :root { 
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #272829; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #45505b; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #45505b; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --heading-color: #050d18; /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #149ddd; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #45505b;  /* The default color of the main navmenu links */
-  --nav-hover-color: #45505b; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #212529; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #0563bb; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-color: #a8a9b4;  /* The default color of the main navmenu links */
+  --nav-hover-color: #ffffff; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-mobile-background-color: #040b14; /* Used as the background color for mobile navigation menu */
+  --nav-dropdown-background-color: #040b14; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+  --nav-dropdown-color: #a8a9b4; /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-hover-color: #ffffff; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
+
 .light-background {
-  --background-color: #f9f9f9;
+  --background-color: #f4fafd;
   --surface-color: #ffffff;
 }
 
 .dark-background {
-  --background-color: #060606;
+  --background-color: #040b14;
   --default-color: #ffffff;
   --heading-color: #ffffff;
-  --surface-color: #252525;
+  --surface-color: #151f2b;
   --contrast-color: #ffffff;
 }
 
@@ -74,39 +87,135 @@ h6 {
   font-family: var(--heading-font);
 }
 
+/* PHP Email Form Messages
+------------------------------*/
+.php-email-form .error-message {
+  display: none;
+  background: #df1529;
+  color: #ffffff;
+  text-align: left;
+  padding: 15px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.php-email-form .sent-message {
+  display: none;
+  color: #ffffff;
+  background: #059652;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.php-email-form .loading {
+  display: none;
+  background: var(--surface-color);
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 24px;
+}
+
+.php-email-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid var(--accent-color);
+  border-top-color: var(--surface-color);
+  animation: php-email-form-loading 1s linear infinite;
+}
+
+@keyframes php-email-form-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 /*--------------------------------------------------------------
 # Global Header
 --------------------------------------------------------------*/
 .header {
   color: var(--default-color);
+  background-color: var(--background-color);
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
   padding: 0 15px;
+  width: 300px;
   transition: all ease-in-out 0.3s;
   overflow-y: auto;
   z-index: 997;
-  min-width: 200px;
+  border-right: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.header .profile-img img {
+  margin: 15px auto;
+  display: block;
+  width: 120px;
+  border: 8px solid color-mix(in srgb, var(--default-color), transparent 85%);
+}
+
+.header .logo {
+  line-height: 1;
+  margin-bottom: 15px;
+}
+
+.header .logo img {
+  max-height: 32px;
+  margin-right: 8px;
+}
+
+.header .logo h1 {
+  font-size: 24px;
+  margin: 0;
+  font-weight: 700;
+  color: var(--heading-color);
+}
+
+.header .social-links {
+  margin: 0 0 20px 0;
+}
+
+.header .social-links a {
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: color-mix(in srgb, var(--default-color), transparent 90%);
+  color: var(--default-color);
+  margin: 0 2px;
+  border-radius: 50%;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  transition: 0.3s;
+}
+
+.header .social-links a:hover {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+}
+
+@media (min-width: 1200px) {
+
+  .header~main,
+  .header~#footer {
+    margin-left: 300px;
+  }
 }
 
 @media (max-width: 1199px) {
   .header {
-    background-color: var(--background-color);
-    border-right: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-    width: 300px;
     left: -100%;
-  }
-}
-
-@media (min-width: 1200px) and (max-width: 1600px) {
-  .header~main {
-    margin-left: 160px;
-  }
-
-  .header~main .hero {
-    margin-left: -160px;
-    width: 100vw;
   }
 }
 
@@ -140,6 +249,10 @@ h6 {
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
+.mobile-nav-toggle {
+  display: none;
+}
+
 .navmenu {
   padding: 0;
   z-index: 9997;
@@ -149,66 +262,103 @@ h6 {
   list-style: none;
   padding: 0 0 20px 0;
   margin: 0;
-  width: 130px;
 }
 
 .navmenu a,
 .navmenu a:focus {
   color: var(--nav-color);
+  padding: 15px 10px;
   font-family: var(--nav-font);
+  font-size: 16px;
+  font-weight: 400;
   display: flex;
   align-items: center;
-  padding: 10px 18px;
-  margin-bottom: 8px;
-  font-size: 15px;
-  border-radius: 50px;
-  background: color-mix(in srgb, var(--default-color), transparent 92%);
-  height: 56px;
-  width: 100%;
-  overflow: hidden;
+  white-space: nowrap;
   transition: 0.3s;
+  width: 100%;
 }
 
-.navmenu a i,
-.navmenu a:focus i {
+.navmenu a .navicon,
+.navmenu a:focus .navicon {
   font-size: 20px;
+  margin-right: 10px;
 }
 
-.navmenu a span,
-.navmenu a:focus span {
-  padding: 0 5px 0 7px;
+.navmenu a .toggle-dropdown,
+.navmenu a:focus .toggle-dropdown {
+  font-size: 12px;
+  line-height: 0;
+  margin-left: auto;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: 0.3s;
+  flex-shrink: 0;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
 }
 
-@media (min-width: 992px) {
-
-  .navmenu a,
-  .navmenu a:focus {
-    max-width: 56px;
-  }
-
-  .navmenu a span,
-  .navmenu a:focus span {
-    display: none;
-  }
+.navmenu a .toggle-dropdown:hover,
+.navmenu a:focus .toggle-dropdown:hover {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
 }
 
 .navmenu a:hover,
 .navmenu .active,
-.navmenu .active:focus,
-.navmenu li:hover>a {
-  color: var(--contrast-color);
-  background: var(--nav-hover-color);
+.navmenu .active:focus {
+  color: var(--nav-hover-color);
 }
 
-.navmenu a:hover,
-.navmenu li:hover>a {
-  max-width: 100%;
-  color: var(--contrast-color);
+.navmenu a:hover .navicon,
+.navmenu .active .navicon,
+.navmenu .active:focus .navicon {
+  color: var(--accent-color);
 }
 
-.navmenu a:hover span,
-.navmenu li:hover>a span {
+.navmenu .active .toggle-dropdown,
+.navmenu .active:focus .toggle-dropdown {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  transform: rotate(180deg);
+}
+
+.navmenu .dropdown {
   display: block;
+}
+
+.navmenu .dropdown a,
+.navmenu .dropdown a:focus {
+  color: --nav-dropdown-color;
+}
+
+.navmenu .dropdown a:hover,
+.navmenu .dropdown .active,
+.navmenu .dropdown .active:focus {
+  color: var(--nav-dropdown-hover-color);
+}
+
+.navmenu .dropdown ul {
+  position: static;
+  display: none;
+  z-index: 99;
+  padding: 5px 10px;
+  margin: 5px 10px;
+  background-color: var(--nav-dropdown-background-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  box-shadow: none;
+  transition: all 0.5s ease-in-out;
+}
+
+.navmenu .dropdown ul ul {
+  background-color: rgba(33, 37, 41, 0.1);
+}
+
+.navmenu .dropdown>.dropdown-active {
+  display: block;
+  background-color: rgba(33, 37, 41, 0.03);
 }
 
 /*--------------------------------------------------------------
@@ -216,61 +366,21 @@ h6 {
 --------------------------------------------------------------*/
 .footer {
   color: var(--default-color);
-  background-color: var(--surface-color);
+  background-color: var(--background-color);
   font-size: 14px;
-  text-align: center;
-  padding: 30px 0;
+  padding: 40px 0;
   position: relative;
-}
-
-.footer h3 {
-  font-size: 36px;
-  font-weight: 700;
-  position: relative;
-  padding: 0;
-  margin: 0 0 15px 0;
-}
-
-.footer p {
-  font-size: 15;
-  font-style: italic;
-  padding: 0;
-  margin: 0 0 30px 0;
-}
-
-.footer .social-links {
-  margin: 0 0 30px 0;
-}
-
-.footer .social-links a {
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--accent-color);
-  color: var(--contrast-color);
-  line-height: 1;
-  margin: 0 4px;
-  border-radius: 50%;
-  text-align: center;
-  width: 36px;
-  height: 36px;
-  transition: 0.3s;
-}
-
-.footer .social-links a:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
-  text-decoration: none;
-}
-
-.footer .copyright {
-  padding-top: 25px;
   border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
+.footer .copyright p {
+  margin-bottom: 0;
+}
+
 .footer .credits {
+  margin-top: 4px;
   font-size: 13px;
-  padding-top: 5px;
+  text-align: center;
 }
 
 /*--------------------------------------------------------------
@@ -355,24 +465,22 @@ h6 {
 # Global Page Titles & Breadcrumbs
 --------------------------------------------------------------*/
 .page-title {
-  --background-color: color-mix(in srgb, var(--default-color), transparent 96%);
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 20px 0;
+  padding: 25px 0;
   position: relative;
 }
 
 .page-title h1 {
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 700;
-  margin: 0;
 }
 
 .page-title .breadcrumbs ol {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
-  padding: 0 0 10px 0;
+  padding: 0;
   margin: 0;
   font-size: 14px;
   font-weight: 400;
@@ -389,7 +497,6 @@ h6 {
   color: color-mix(in srgb, var(--default-color), transparent 70%);
 }
 
-
 /*--------------------------------------------------------------
 # Global Sections
 --------------------------------------------------------------*/
@@ -405,7 +512,6 @@ section,
 # Global Section Titles
 --------------------------------------------------------------*/
 .section-title {
-  text-align: center;
   padding-bottom: 60px;
   position: relative;
 }
@@ -418,30 +524,15 @@ section,
   position: relative;
 }
 
-.section-title h2:before {
+.section-title h2:after {
   content: "";
   position: absolute;
   display: block;
-  width: 160px;
-  height: 1px;
-  background: color-mix(in srgb, var(--default-color), transparent 60%);
-  left: 0;
-  right: 0;
-  bottom: 1px;
-  margin: auto;
-}
-
-.section-title h2::after {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 60px;
+  width: 50px;
   height: 3px;
   background: var(--accent-color);
   left: 0;
-  right: 0;
   bottom: 0;
-  margin: auto;
 }
 
 .section-title p {
@@ -462,7 +553,6 @@ section,
 }
 
 .hero img {
-  border-radius: 5px;
   position: absolute;
   inset: 0;
   display: block;
@@ -474,7 +564,7 @@ section,
 
 .hero:before {
   content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 30%);
+  background: color-mix(in srgb, var(--background-color), transparent 70%);
   position: absolute;
   inset: 0;
   z-index: 2;
@@ -506,9 +596,9 @@ section,
 }
 
 .hero .social-links a {
-  font-size: 20px;
+  font-size: 24px;
   display: inline-block;
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
   line-height: 1;
   margin-right: 20px;
   transition: 0.3s;
@@ -542,7 +632,7 @@ section,
 }
 
 .about .content ul li {
-  margin-bottom: 5px;
+  margin-bottom: 20px;
   display: flex;
   align-items: center;
 }
@@ -558,61 +648,37 @@ section,
   line-height: 0;
 }
 
-.about .content p {
-  text-align: justify;
-  padding-bottom: 20px;
+/*--------------------------------------------------------------
+# Stats Section
+--------------------------------------------------------------*/
+.stats .stats-item {
+  padding: 30px;
+  width: 100%;
 }
 
-.about img {
-  border-radius: 10px;
+.stats .stats-item i {
+  color: var(--accent-color);
+  display: block;
+  font-size: 44px;
+  float: left;
+  line-height: 0;
 }
 
-/* Download Resume Button - Custom Style */
-.resume-download-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: left;
-    gap: 10px;
-    padding: 14px 32px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #ffffff;
-    background: var(--accent-color);
-    border: none;
-    border-radius: 50px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    /* box-shadow: 0 4px 15px var(--accent-color); */
-    cursor: pointer;
+.stats .stats-item .purecounter {
+  color: var(--heading-color);
+  font-size: 48px;
+  line-height: 40px;
+  display: block;
+  font-weight: 700;
+  margin-left: 60px;
 }
 
-.resume-download-btn:hover {
-    background: var(--background-color);
-    transform: translateY(-3px);
-    /* box-shadow: 0 8px 25px var(--default-color); */
-    color: var(--default-color);
-    text-decoration: none;
-}
-
-.resume-download-btn:active {
-    transform: translateY(-1px);
-}
-
-.resume-download-btn i {
-    font-size: 1.2rem;
-}
-
-/* Optional: Dark mode variation (if your site supports dark theme) */
-@media (prefers-color-scheme: dark) {
-    .resume-download-btn {
-        background: var(--accent-color);
-        /* box-shadow: 0 4px 15px var(--accent-color); */
-    }
-    .resume-download-btn:hover {
-        color: var(--default-color);
-        background: var(--background-color);
-        /* box-shadow: 0 8px 25px var(--accent-color); */
-    }
+.stats .stats-item p {
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+  padding: 15px 0 0 0;
+  margin: 0 0 0 60px;
+  font-family: var(--heading-font);
+  font-size: 14px;
 }
 
 /*--------------------------------------------------------------
@@ -659,7 +725,7 @@ section,
   color: var(--heading-color);
   font-size: 26px;
   font-weight: 700;
-  margin-top: 30px;
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 
@@ -687,6 +753,14 @@ section,
   margin-bottom: 10px;
 }
 
+.resume .resume-item ul {
+  padding-left: 20px;
+}
+
+.resume .resume-item ul li {
+  padding-bottom: 10px;
+}
+
 .resume .resume-item:last-child {
   padding-bottom: 0;
 }
@@ -704,154 +778,457 @@ section,
 }
 
 /*--------------------------------------------------------------
+# Portfolio Section
+--------------------------------------------------------------*/
+.portfolio .portfolio-filters {
+  padding: 0;
+  margin: 0 auto 20px auto;
+  list-style: none;
+  text-align: center;
+}
+
+.portfolio .portfolio-filters li {
+  cursor: pointer;
+  display: inline-block;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0 10px;
+  line-height: 1;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.portfolio .portfolio-filters li:hover,
+.portfolio .portfolio-filters li.filter-active {
+  color: var(--accent-color);
+}
+
+.portfolio .portfolio-filters li:first-child {
+  margin-left: 0;
+}
+
+.portfolio .portfolio-filters li:last-child {
+  margin-right: 0;
+}
+
+@media (max-width: 575px) {
+  .portfolio .portfolio-filters li {
+    font-size: 14px;
+    margin: 0 5px;
+  }
+}
+
+.portfolio .portfolio-content {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio .portfolio-content img {
+  transition: 0.3s;
+}
+
+.portfolio .portfolio-content .portfolio-info {
+  opacity: 0;
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  transition: all ease-in-out 0.3s;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 15px;
+}
+
+.portfolio .portfolio-content .portfolio-info h4 {
+  font-size: 14px;
+  padding: 5px 10px;
+  font-weight: 400;
+  color: #ffffff;
+  display: inline-block;
+  background-color: var(--accent-color);
+}
+
+.portfolio .portfolio-content .portfolio-info p {
+  position: absolute;
+  bottom: 10px;
+  text-align: center;
+  display: inline-block;
+  left: 0;
+  right: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.portfolio .portfolio-content .portfolio-info .preview-link,
+.portfolio .portfolio-content .portfolio-info .details-link {
+  position: absolute;
+  left: calc(50% - 40px);
+  font-size: 26px;
+  top: calc(50% - 14px);
+  color: #fff;
+  transition: 0.3s;
+  line-height: 1.2;
+}
+
+.portfolio .portfolio-content .portfolio-info .preview-link:hover,
+.portfolio .portfolio-content .portfolio-info .details-link:hover {
+  color: var(--accent-color);
+}
+
+.portfolio .portfolio-content .portfolio-info .details-link {
+  left: 50%;
+  font-size: 34px;
+  line-height: 0;
+}
+
+.portfolio .portfolio-content:hover .portfolio-info {
+  opacity: 1;
+}
+
+.portfolio .portfolio-content:hover img {
+  transform: scale(1.1);
+}
+
+/*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
-.services {
-  background-color: var(--surface-color);
-}
 .services .service-item {
-  background-color: var(--background-color);
-  height: 100%;
-  padding: 60px 30px;
-  text-align: center;
-  transition: 0.3s;
-  border-radius: 5px;
-  border-bottom: 3px solid #5f687b; /* Updated border color */
+  position: relative;
 }
 
 .services .service-item .icon {
-  font-size: 36px;
-  padding: 20px;
-  border-radius: 4px;
-  position: relative;
-  margin-bottom: 25px;
-  display: inline-block;
-  line-height: 0;
-  transition: 0.3s;
-  color: #5f687b;
-  background: rgba(95, 104, 123, 0.1); /* Subtle background matching main color */
+  background: var(--accent-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  transition: 0.5s;
+  border: 1px solid var(--accent-color);
+  margin-right: 20px;
 }
 
-.services .service-item h3 {
+.services .service-item .icon i {
+  color: var(--contrast-color);
   font-size: 24px;
-  font-weight: 700;
-}
-
-.services .service-item p {
-  font-size: 15px;
-  margin: 0;
-}
-
-/* Hover Effects */
-.services .service-item:hover {
-  background: #5f687b; /* Hover background color */
-}
-
-.services .service-item:hover h3,
-.services .service-item:hover p {
-  color: #fff;
+  line-height: 0;
 }
 
 .services .service-item:hover .icon {
-  background: #fff;
+  background: var(--surface-color);
+}
+
+.services .service-item:hover .icon i {
+  color: var(--accent-color);
+}
+
+.services .service-item .title {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.services .service-item .title a {
+  color: var(--heading-color);
+}
+
+.services .service-item .title a:hover {
+  color: var(--accent-color);
+}
+
+.services .service-item .description {
+  line-height: 24px;
+  font-size: 14px;
+}
+
+/*--------------------------------------------------------------
+# Testimonials Section
+--------------------------------------------------------------*/
+.testimonials .testimonials-carousel,
+.testimonials .testimonials-slider {
+  overflow: hidden;
+}
+
+.testimonials .testimonial-item {
+  box-sizing: content-box;
+  text-align: center;
+  min-height: 320px;
+}
+
+.testimonials .testimonial-item .testimonial-img {
+  width: 90px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.testimonials .testimonial-item h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0 5px 0;
+}
+
+.testimonials .testimonial-item h4 {
+  font-size: 14px;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  margin: 0;
+}
+
+.testimonials .testimonial-item .quote-icon-left,
+.testimonials .testimonial-item .quote-icon-right {
+  color: color-mix(in srgb, var(--accent-color), transparent 40%);
+  font-size: 26px;
+  line-height: 0;
+}
+
+.testimonials .testimonial-item .quote-icon-left {
+  display: inline-block;
+  left: -5px;
+  position: relative;
+}
+
+.testimonials .testimonial-item .quote-icon-right {
+  display: inline-block;
+  right: -5px;
+  position: relative;
+  top: 10px;
+  transform: scale(-1, -1);
+}
+
+.testimonials .testimonial-item p {
+  font-style: italic;
+  margin: 0 15px 15px 15px;
+  padding: 20px;
+  background-color: var(--surface-color);
+  position: relative;
+  margin-bottom: 35px;
+  border-radius: 6px;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.testimonials .testimonial-item p::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 20px solid var(--surface-color);
+  border-right: 20px solid transparent;
+  border-left: 20px solid transparent;
+  position: absolute;
+  bottom: -20px;
+  left: calc(50% - 20px);
+}
+
+.testimonials .swiper-wrapper {
+  height: auto;
+}
+
+.testimonials .swiper-pagination {
+  margin-top: 40px;
+  position: relative;
+}
+
+.testimonials .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: var(--background-color);
+  opacity: 1;
+  border: 1px solid var(--accent-color);
+}
+
+.testimonials .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: var(--accent-color);
+}
+
+/*--------------------------------------------------------------
+# Contact Section
+--------------------------------------------------------------*/
+.contact .info-wrap {
+  background-color: var(--surface-color);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+@media (max-width: 575px) {
+  .contact .info-wrap {
+    padding: 20px;
+  }
+}
+
+.contact .info-item {
+  margin-bottom: 40px;
+}
+
+.contact .info-item i {
+  font-size: 20px;
+  color: var(--accent-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 92%);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+  margin-right: 15px;
+}
+
+.contact .info-item h3 {
+  padding: 0;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.contact .info-item p {
+  padding: 0;
+  margin-bottom: 0;
+  font-size: 14px;
+}
+
+.contact .info-item:hover i {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.contact .php-email-form {
+  background-color: var(--surface-color);
+  height: 100%;
+  padding: 30px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 575px) {
+  .contact .php-email-form {
+    padding: 20px;
+  }
+}
+
+.contact .php-email-form input[type=text],
+.contact .php-email-form input[type=email],
+.contact .php-email-form textarea {
+  font-size: 14px;
+  padding: 10px 15px;
+  box-shadow: none;
+  border-radius: 0;
+  color: var(--default-color);
+  background-color: var(--surface-color);
+  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
+}
+
+.contact .php-email-form input[type=text]:focus,
+.contact .php-email-form input[type=email]:focus,
+.contact .php-email-form textarea:focus {
+  border-color: var(--accent-color);
+}
+
+.contact .php-email-form input[type=text]::placeholder,
+.contact .php-email-form input[type=email]::placeholder,
+.contact .php-email-form textarea::placeholder {
+  color: color-mix(in srgb, var(--default-color), transparent 70%);
+}
+
+.contact .php-email-form button[type=submit] {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+  border: 0;
+  padding: 10px 30px;
+  transition: 0.4s;
+  border-radius: 50px;
+}
+
+.contact .php-email-form button[type=submit]:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 25%);
+}
+
+/*--------------------------------------------------------------
+# Portfolio Details Section
+--------------------------------------------------------------*/
+.portfolio-details .portfolio-details-slider img {
+  width: 100%;
+}
+
+.portfolio-details .portfolio-details-slider .swiper-pagination {
+  margin-top: 20px;
+  position: relative;
+}
+
+.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: color-mix(in srgb, var(--default-color), transparent 85%);
+  opacity: 1;
+}
+
+.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: var(--accent-color);
+}
+
+.portfolio-details .portfolio-info {
+  padding: 30px;
+  box-shadow: 0px 0 30px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-details .portfolio-info h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+}
+
+.portfolio-details .portfolio-info ul {
+  list-style: none;
+  padding: 0;
+  font-size: 15px;
+}
+
+.portfolio-details .portfolio-info ul li+li {
+  margin-top: 10px;
+}
+
+.portfolio-details .portfolio-description {
+  padding-top: 30px;
+}
+
+.portfolio-details .portfolio-description h2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.portfolio-details .portfolio-description p {
+  padding: 0;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
 }
 
 /*--------------------------------------------------------------
 # Service Details Section
 --------------------------------------------------------------*/
-.service-details .service-box {
-  padding: 20px;
-  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1);
-}
-
-.service-details .service-box+.service-box {
-  margin-top: 30px;
-}
-
-.service-details .service-box h4 {
-  font-size: 20px;
-  font-weight: 700;
-  border-bottom: 2px solid color-mix(in srgb, var(--default-color), transparent 92%);
-  padding-bottom: 15px;
-  margin-bottom: 15px;
+.service-details .services-list {
+  padding: 10px 30px;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  margin-bottom: 20px;
 }
 
 .service-details .services-list a {
+  display: block;
+  line-height: 1;
+  padding: 8px 0 8px 15px;
+  border-left: 3px solid color-mix(in srgb, var(--default-color), transparent 70%);
+  margin: 20px 0;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
-  background-color: color-mix(in srgb, var(--default-color), transparent 96%);
-  display: flex;
-  align-items: center;
-  padding: 12px 15px;
-  margin-top: 15px;
   transition: 0.3s;
-}
-
-.service-details .services-list a:first-child {
-  margin-top: 0;
-}
-
-.service-details .services-list a i {
-  font-size: 16px;
-  margin-right: 8px;
-  color: var(--accent-color);
 }
 
 .service-details .services-list a.active {
-  color: var(--contrast-color);
-  background-color: var(--accent-color);
-}
-
-.service-details .services-list a.active i {
-  color: var(--contrast-color);
+  color: var(--heading-color);
+  font-weight: 700;
+  border-color: var(--accent-color);
 }
 
 .service-details .services-list a:hover {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 95%);
-  color: var(--accent-color);
-}
-
-.service-details .download-catalog a {
-  color: var(--default-color);
-  display: flex;
-  align-items: center;
-  padding: 10px 0;
-  transition: 0.3s;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-}
-
-.service-details .download-catalog a:first-child {
-  border-top: 0;
-  padding-top: 0;
-}
-
-.service-details .download-catalog a:last-child {
-  padding-bottom: 0;
-}
-
-.service-details .download-catalog a i {
-  font-size: 24px;
-  margin-right: 8px;
-  color: var(--accent-color);
-}
-
-.service-details .download-catalog a:hover {
-  color: var(--accent-color);
-}
-
-.service-details .help-box {
-  background-color: var(--accent-color);
-  color: var(--contrast-color);
-  margin-top: 30px;
-  padding: 30px 15px;
-}
-
-.service-details .help-box .help-icon {
-  font-size: 48px;
-}
-
-.service-details .help-box h4,
-.service-details .help-box a {
-  color: var(--contrast-color);
+  border-color: var(--accent-color);
 }
 
 .service-details .services-img {
@@ -860,6 +1237,11 @@ section,
 
 .service-details h3 {
   font-size: 26px;
+  font-weight: 700;
+}
+
+.service-details h4 {
+  font-size: 20px;
   font-weight: 700;
 }
 
@@ -886,312 +1268,8 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Contact Section
+# Starter Section Section
 --------------------------------------------------------------*/
-.contact .info-box {
-  background-color: var(--accent-color);
-  color: var(--contrast-color);
-  padding: 3rem;
-  border-radius: 1rem;
-  height: 100%;
-}
-
-.contact .info-box h3 {
-  color: var(--contrast-color);
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-@media (max-width: 767.98px) {
-  .contact .info-box h3 {
-    font-size: 1.75rem;
-  }
-}
-
-.contact .info-box p {
-  opacity: 0.8;
-  margin-bottom: 2rem;
-}
-
-.contact .info-box a {
-  color: var(--contrast-color);
-}
-
-@media (max-width: 992px) {
-  .contact .info-box {
-    padding: 1.5rem;
-  }
-}
-
-.contact .info-item {
-  display: flex;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.contact .info-item:last-child {
-  margin-bottom: 0;
-}
-
-.contact .info-item .icon-box {
-  width: 3.5rem;
-  height: 3.5rem;
-  background-color: color-mix(in srgb, var(--contrast-color), transparent 85%);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  transition: 0.3s;
-}
-
-.contact .info-item .icon-box i {
-  font-size: 1.5rem;
-  color: var(--contrast-color);
-}
-
-.contact .info-item:hover .icon-box {
-  background-color: color-mix(in srgb, var(--contrast-color), transparent 70%);
-}
-
-.contact .info-item .content h4 {
-  color: var(--contrast-color);
-  font-size: 1.25rem;
-  margin-bottom: 0.5rem;
-  font-weight: 700;
-}
-
-.contact .info-item .content p {
-  margin-bottom: 0.25rem;
-  font-size: 0.95rem;
-}
-
-.contact .info-item .content p:last-child {
-  margin-bottom: 0;
-}
-
-.contact .contact-form {
-  background-color: var(--surface-color);
-  padding: 3rem;
-  border-radius: 1rem;
-  height: 100%;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
-}
-
-@media (max-width: 992px) {
-  .contact .contact-form {
-    padding: 1.5rem;
-  }
-}
-
-.contact .contact-form h3 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-@media (max-width: 768px) {
-  .contact .contact-form h3 {
-    font-size: 1.75rem;
-  }
-}
-
-.contact .contact-form p {
-  color: color-mix(in srgb, var(--default-color), transparent 25%);
-  margin-bottom: 2rem;
-}
-
-.contact .contact-form .form-control,
-.contact .contact-form .form-select {
-  padding: 0.875rem 1.25rem;
-  border-color: color-mix(in srgb, var(--default-color), transparent 90%);
-  border-radius: 0.5rem;
-  background-color: color-mix(in srgb, var(--surface-color) 90%, white 5%);
-  color: var(--default-color);
-}
-
-.contact .contact-form .form-control:focus,
-.contact .contact-form .form-select:focus {
-  box-shadow: none;
-  border-color: var(--accent-color);
-}
-
-.contact .contact-form .form-control::placeholder,
-.contact .contact-form .form-select::placeholder {
-  color: color-mix(in srgb, var(--default-color), transparent 50%);
-}
-
-.contact .contact-form .btn {
-  background-color: var(--accent-color);
-  color: var(--contrast-color);
-  padding: 1rem 2rem;
-  border-radius: 2rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: 0.3s;
-}
-
-.contact .contact-form .btn i {
-  font-size: 1.25rem;
-}
-
-.contact .contact-form .btn:hover {
-  background-color: color-mix(in srgb, var(--accent-color), var(--contrast-color) 20%);
-}
-.php-email-form .loading,
-.php-email-form .error-message,
-.php-email-form .sent-message {
-  display: none;
-}
-
-.d-block {
-  display: block !important;
-}
-
-/*--------------------------------------------------------------
-# Blog Section Scroll Animation (ONLY BLOG)
---------------------------------------------------------------*/
-
-/* Initial hidden state */
-.blog .blog-item[data-aos] {
-  opacity: 0;
-  transform: translateY(40px) scale(0.98);
-  transition-property: opacity, transform;
-}
-
-/* When animated */
-.blog .blog-item.aos-animate {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
-
-/* Hover effect (no conflict with AOS) */
-.blog .blog-item:hover {
-  transform: translateY(-6px) scale(1.01);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
-}
-
-/* Mobile optimization */
-@media (max-width: 768px) {
-  .blog .blog-item[data-aos] {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-
-/* Equal height columns */
-.blog .col-lg-4,
-.blog .col-md-6 {
-  display: flex;
-}
-
-/* Blog Card */
-.blog .blog-item {
-  background: var(--surface-color);
-  border-radius: 10px;
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  box-shadow: 0 5px 25px rgba(0,0,0,0.08);
-  transition: all 0.4s ease;
-}
-
-/* Hover */
-.blog .blog-item:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
-}
-
-/* Accent bar */
-.blog .blog-accent {
-  width: 50px;
-  height: 4px;
-  background: var(--accent-color);
-  border-radius: 5px;
-  margin-bottom: 1rem;
-}
-
-/* Title */
-.blog .post-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  line-height: 1.4;
-  margin-bottom: 0.75rem;
-
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.blog .post-title a {
-  color: var(--heading-color);
-  text-decoration: none;
-}
-
-.blog .post-title a:hover {
-  color: var(--accent-color);
-}
-
-/* Meta */
-.blog .post-meta {
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
-  color: color-mix(in srgb, var(--default-color), transparent 35%);
-}
-
-/* Excerpt */
-.blog .post-excerpt {
-  flex-grow: 1;
-  margin-bottom: 1.5rem;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
-
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-/* Read More */
-.blog .read-more {
-  margin-top: auto;
-  font-weight: 600;
-  text-decoration: none;
-  color: var(--accent-color);
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.blog .read-more:hover {
-  text-decoration: underline;
-}
-
-/* View All Posts Button (Download Resume Style) */
-.btn-resume-style {
-  background: var(--accent-color);
-  color: #fff;
-  padding: 0.75rem 2rem;
-  border-radius: 50px;
-  font-weight: 600;
-  border: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: all 0.3s ease;
-  text-decoration: none;
-}
-
-.btn-resume-style:hover {
-  background: var(--background-color);
-  transform: translateY(-3px);
-  /* box-shadow: 0 8px 25px var(--default-color); */
-  color: var(--default-color);
-  text-decoration: none;
-}
-
-.btn-resume-style:focus {
-  box-shadow: 0 0 0 0.25rem color-mix(in srgb, var(--accent-color), transparent 70%);
+.starter-section {
+  /* Add your styles here */
 }
