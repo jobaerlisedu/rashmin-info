@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Networking Fundamentals Every System Administrator Must Understand - Md. Jobaer Hossain</title>
+
+  <link href="assets/img/favicon.png" rel="icon">
+
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    .blog-details .content-wrapper {
+      background-color: var(--surface-color);
+      padding: 60px 50px;
+      border-radius: 15px;
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
+      margin-top: -80px;
+      position: relative;
+      z-index: 10;
+    }
+    .blog-details .post-meta {
+      color: color-mix(in srgb, var(--default-color), transparent 40%);
+      font-size: 14px;
+      margin-bottom: 25px;
+      border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+      padding-bottom: 15px;
+    }
+    .blog-details .post-meta i { color: var(--accent-color); margin-right: 5px; }
+    .blog-details .content h2 { font-size: 32px; margin-top: 45px; font-weight: 800; color: var(--heading-color); border-left: 5px solid var(--accent-color); padding-left: 20px; }
+    .blog-details .content h3 { font-size: 26px; margin-top: 40px; font-weight: 700; color: var(--heading-color); background: color-mix(in srgb, var(--accent-color), transparent 95%); padding: 10px; border-radius: 5px; }
+    .blog-details .content h4 { font-size: 22px; margin-top: 30px; font-weight: 600; color: var(--accent-color); }
+    .blog-details .content p { line-height: 1.9; margin-bottom: 25px; text-align: justify; }
+    .blog-details .content ul li { margin-bottom: 15px; line-height: 1.8; }
+    .tech-summary-box {
+      background: color-mix(in srgb, var(--accent-color), transparent 92%);
+      border: 1px solid var(--accent-color);
+      padding: 35px;
+      border-radius: 12px;
+      margin: 45px 0;
+    }
+    .highlight-text { border-left: 4px solid var(--accent-color); padding-left: 20px; font-style: italic; font-size: 1.1rem; color: color-mix(in srgb, var(--default-color), transparent 20%); margin: 35px 0; }
+    .protocol-table { width: 100%; border-collapse: collapse; margin-bottom: 30px; }
+    .protocol-table th, .protocol-table td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+    .protocol-table th { background-color: var(--accent-color); color: white; }
+  </style>
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex flex-column justify-content-center">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="index.html#hero"><i class="bi bi-house navicon"></i><span>Home</span></a></li>
+        <li><a href="index.html#about"><i class="bi bi-person navicon"></i><span>About</span></a></li>
+        <li><a href="index.html#skills"><i class="bi bi-hammer navicon"></i><span>Skills</span></a></li>
+        <li><a href="index.html#resume"><i class="bi bi-file-earmark-text navicon"></i><span>Resume</span></a></li>
+        <li><a href="blogs.html" class="active"><i class="bi bi-journal-text navicon"></i><span>Blogs</span></a></li>
+        <li><a href="index.html#services"><i class="bi bi-hdd-stack navicon"></i><span>Services</span></a></li>
+        <li><a href="index.html#contact"><i class="bi bi-envelope navicon"></i><span>Contact</span></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+
+    <section class="page-title">
+      <div class="container" data-aos="fade-up">
+        <div class="mb-3">
+          <a href="blogs.html" class="text-reset d-inline-flex align-items-center" style="text-decoration: none; opacity: 0.7; transition: 0.3s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7">
+            <i class="bi bi-chevron-left me-1"></i> Back to Blogs
+          </a>
+        </div>
+        <h1>Technical Digest</h1>
+      </div>
+    </section>
+
+    <section class="blog-details section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10" data-aos="fade-up">
+
+            <div class="content-wrapper shadow-lg">
+              <div class="post-meta">
+                <span class="me-4"><i class="bi bi-person"></i> Md. Jobaer Hossain</span>
+                <span class="me-4"><i class="bi bi-calendar"></i> Jan 23, 2026</span>
+                <span class="me-4"><i class="bi bi-clock"></i> 95 Min Read</span>
+              </div>
+
+              <h2 class="mb-4" style="font-weight: 800; color: var(--heading-color);">Networking Fundamentals Every System Administrator Must Understand</h2>
+              
+              <div class="content">
+                <p>As we navigate the complexities of 2026's hybrid-cloud infrastructures, the distinction between "Systems" and "Networks" has nearly vanished. Every modern System Administrator is, by necessity, a network architect. Whether you are debugging a container escape, a slow API response, or a 5G edge node disconnection, the "truth" is always found in the packets.</p>
+
+                <p>This guide serves as a high-level masterclass in the networking "physics" that remains constant despite the rapid evolution of software. If you cannot visualize the flow of data through the kernel and across the wire, you are merely guessing at root causes.</p>
+
+                <h3>1. The OSI & TCP/IP Reference Models: A Functional View</h3>
+                <p>In 2026, we primarily use the <strong>TCP/IP model</strong> for daily operations, but the <strong>OSI model</strong> remains the standard for troubleshooting isolation. When a user reports "The site is slow," the veteran SysAdmin mentally maps the layers:</p>
+                
+                
+
+                <ul>
+                  <li><strong>Layer 1 (Physical):</strong> In data centers, this involves verifying link speeds (400G/800G) and fiber light levels (dBm). At the edge, it involves 5G signal-to-noise ratios.</li>
+                  <li><strong>Layer 2 (Data Link):</strong> The domain of MAC addresses and ARP. Understanding <strong>ARP poisoning</strong> and <strong>VLAN tagging (802.1Q)</strong> is crucial for ensuring traffic is actually reaching the intended server interface.</li>
+                  <li><strong>Layer 3 (Network):</strong> This is where IP routing and <strong>ICMP</strong> live. You must understand how the <strong>Routing Table</strong> is built—whether through static routes or dynamic protocols like BGP and OSPF.</li>
+                  <li><strong>Layer 4 (Transport):</strong> The layer of <strong>TCP and UDP</strong>. Understanding port exhaustion (ephemeral ports) and stateful connection tracking in the Linux kernel is essential for scaling high-traffic web servers.</li>
+                </ul>
+
+                <h3>2. Master the TCP State Machine</h3>
+                <p>Most application performance issues stem from the <strong>TCP Three-Way Handshake</strong>. A SysAdmin must be able to interpret socket states using tools like `ss` or `netstat`. If a server is flooded with <strong>TIME_WAIT</strong> connections, it indicates an application is not closing connections efficiently, potentially leading to port exhaustion.</p>
+
+                <div class="highlight-text">
+                  "TCP is inherently a 'chatty' protocol. In 2026, many of our high-speed services have migrated to <strong>QUIC (HTTP/3)</strong>, which uses UDP to eliminate the head-of-line blocking found in traditional TCP."
+                </div>
+
+                <h3>3. DNS: The Internet’s Nervous System</h3>
+                <p>90% of "Network Outages" are actually DNS failures. You must understand the <strong>Recursive Resolution Path</strong>. When a client requests a domain, the query travels from the local stub resolver to the recursive resolver, then potentially to the root, TLD, and finally the authoritative server.</p>
+                
+                
+
+                <p>Modern admins must also master <strong>DNSSEC</strong> to prevent cache poisoning and <strong>EDNS</strong> for passing larger payloads. In a Kubernetes environment, understanding how <strong>CoreDNS</strong> handles service discovery is the key to preventing "Service Not Found" errors between microservices.</p>
+
+                <h3>4. Routing, BGP, and the Global Fabric</h3>
+                <p>If you are managing multi-cloud environments, you are dealing with <strong>BGP (Border Gateway Protocol)</strong>. Understanding how BGP selects the "Best Path" using attributes like AS-Path, Local Preference, and MED is critical for optimizing egress costs and reducing latency for global users.</p>
+
+                <table class="protocol-table">
+                  <thead>
+                    <tr>
+                      <th>Protocol</th>
+                      <th>Layer</th>
+                      <th>Primary Function</th>
+                      <th>SysAdmin Use Case</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>ARP</td>
+                      <td>2</td>
+                      <td>IP to MAC mapping</td>
+                      <td>Local segment connectivity</td>
+                    </tr>
+                    <tr>
+                      <td>BGP</td>
+                      <td>3 (App)</td>
+                      <td>Path Vector Routing</td>
+                      <td>Multi-cloud/Internet routing</td>
+                    </tr>
+                    <tr>
+                      <td>TLS 1.3</td>
+                      <td>6</td>
+                      <td>Encryption</td>
+                      <td>Web security & API integrity</td>
+                    </tr>
+                    <tr>
+                      <td>gRPC</td>
+                      <td>7</td>
+                      <td>Binary Remote Procedure</td>
+                      <td>Microservice communication</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <h3>5. Modern Observability: From Packet Captures to eBPF</h3>
+                <p>Traditional tools like `tcpdump` are still vital, but in 2026, we use <strong>eBPF (Extended Berkeley Packet Filter)</strong> for deep kernel-level observability. eBPF allows you to trace network packets as they pass through the kernel without the overhead of traditional context switching. Tools like <strong>Cilium</strong> and <strong>Hubble</strong> provide real-time maps of how your distributed services are communicating, making it easy to spot unauthorized traffic or performance bottlenecks.</p>
+
+                <div class="tech-summary-box">
+                  <h4 class="mb-3">The SysAdmin’s Networking "Bible" Checklist</h4>
+                  <ul>
+                    <li><strong>IP Subnetting:</strong> Can you calculate a /27 subnet in your head? Efficient IP management prevents IP exhaustion in large VPCs.</li>
+                    <li><strong>MTU and Fragmentation:</strong> Do you understand why <strong>Jumbo Frames (9000 MTU)</strong> are used in storage networks but avoided on the public internet?</li>
+                    <li><strong>Zero Trust Architecture:</strong> Moving from IP-based security to Identity-based security using <strong>mTLS</strong>.</li>
+                    <li><strong>Network Latency:</strong> Understanding that 10ms of latency at the network layer can translate to 500ms of delay in a multi-tier application.</li>
+                  </ul>
+                  <hr>
+                  <p class="mb-0"><strong>Closing Thought:</strong> Networking is the foundation upon which all systems are built. Hardware and software will change, but the logic of routing, switching, and protocol handshakes is the eternal language of computing.</p>
+                </div>
+              </div>
+
+              <div class="d-flex justify-content-between align-items-center mt-5">
+                <a href="blogs.html" class="btn-resume-style"><i class="bi bi-arrow-left"></i> Back to Blogs</a>
+                <div class="social-links d-flex gap-3">
+                   <a href="#" class="share-linkedin" style="color: var(--accent-color); font-size: 22px;"><i class="bi bi-linkedin"></i></a>
+                   <a href="#" class="share-twitter" style="color: var(--accent-color); font-size: 22px;"><i class="bi bi-twitter-x"></i></a>
+                   <a href="#" class="share-general" style="color: var(--accent-color); font-size: 22px;"><i class="bi bi-share"></i></a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer" class="footer">
+    <div class="container text-center">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Jobaer Hossain</span></strong>. All Rights Reserved
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
+
+</body>
+</html>

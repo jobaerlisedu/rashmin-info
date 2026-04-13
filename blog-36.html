@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Essential Networking Commands for Windows and Linux Administrators - Md. Jobaer Hossain</title>
+
+  <link href="assets/img/favicon.png" rel="icon">
+
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    .blog-details .content-wrapper {
+      background-color: var(--surface-color);
+      padding: 60px 50px;
+      border-radius: 15px;
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
+      margin-top: -80px;
+      position: relative;
+      z-index: 10;
+    }
+    .blog-details .post-meta {
+      color: color-mix(in srgb, var(--default-color), transparent 40%);
+      font-size: 14px;
+      margin-bottom: 25px;
+      border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+      padding-bottom: 15px;
+    }
+    .blog-details .post-meta i { color: var(--accent-color); margin-right: 5px; }
+    .blog-details .content h2 { font-size: 32px; margin-top: 45px; font-weight: 800; color: var(--heading-color); border-left: 5px solid var(--accent-color); padding-left: 20px; }
+    .blog-details .content h3 { font-size: 26px; margin-top: 40px; font-weight: 700; color: var(--heading-color); background: color-mix(in srgb, var(--accent-color), transparent 95%); padding: 10px; border-radius: 5px; }
+    .blog-details .content h4 { font-size: 22px; margin-top: 30px; font-weight: 600; color: var(--accent-color); }
+    .blog-details .content p { line-height: 1.9; margin-bottom: 25px; text-align: justify; }
+    .blog-details .content ul li { margin-bottom: 15px; line-height: 1.8; }
+    .tech-summary-box {
+      background: color-mix(in srgb, var(--accent-color), transparent 92%);
+      border: 1px solid var(--accent-color);
+      padding: 35px;
+      border-radius: 12px;
+      margin: 45px 0;
+    }
+    .highlight-text { border-left: 4px solid var(--accent-color); padding-left: 20px; font-style: italic; font-size: 1.1rem; color: color-mix(in srgb, var(--default-color), transparent 20%); margin: 35px 0; }
+    .command-table { width: 100%; border-collapse: collapse; margin-bottom: 30px; }
+    .command-table th, .command-table td { border: 1px solid #ddd; padding: 15px; text-align: left; }
+    .command-table th { background-color: var(--accent-color); color: white; }
+    code { background: #f4f4f4; padding: 2px 5px; border-radius: 4px; color: #d63384; font-weight: 600; }
+  </style>
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex flex-column justify-content-center">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="index.html#hero"><i class="bi bi-house navicon"></i><span>Home</span></a></li>
+        <li><a href="index.html#about"><i class="bi bi-person navicon"></i><span>About</span></a></li>
+        <li><a href="index.html#skills"><i class="bi bi-hammer navicon"></i><span>Skills</span></a></li>
+        <li><a href="index.html#resume"><i class="bi bi-file-earmark-text navicon"></i><span>Resume</span></a></li>
+        <li><a href="blogs.html" class="active"><i class="bi bi-journal-text navicon"></i><span>Blogs</span></a></li>
+        <li><a href="index.html#services"><i class="bi bi-hdd-stack navicon"></i><span>Services</span></a></li>
+        <li><a href="index.html#contact"><i class="bi bi-envelope navicon"></i><span>Contact</span></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+
+    <section class="page-title">
+      <div class="container" data-aos="fade-up">
+        <div class="mb-3">
+          <a href="blogs.html" class="text-reset d-inline-flex align-items-center" style="text-decoration: none; opacity: 0.7; transition: 0.3s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7">
+            <i class="bi bi-chevron-left me-1"></i> Back to Blogs
+          </a>
+        </div>
+        <h1>Technical Digest</h1>
+      </div>
+    </section>
+
+    <section class="blog-details section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10" data-aos="fade-up">
+
+            <div class="content-wrapper shadow-lg">
+              <div class="post-meta">
+                <span class="me-4"><i class="bi bi-person"></i> Md. Jobaer Hossain</span>
+                <span class="me-4"><i class="bi bi-calendar"></i> Jan 23, 2026</span>
+                <span class="me-4"><i class="bi bi-clock"></i> 95 Min Read</span>
+              </div>
+
+              <h2 class="mb-4" style="font-weight: 800; color: var(--heading-color);">Essential Networking Commands for Windows and Linux Administrators</h2>
+              
+              <div class="content">
+                <p>In the world of System Administration, the Command Line Interface (CLI) is your most powerful ally. While modern dashboards provide pretty graphs, only the terminal offers the raw, real-time data needed to diagnose a failing network connection or a misconfigured firewall.</p>
+
+                <p>As we operate in 2026's hybrid environments, a cross-platform understanding is vital. If you can fix a routing issue in Windows but feel lost in a Linux terminal, you're only half an administrator. This guide serves as a Rosetta Stone for the most critical networking commands used in both ecosystems.</p>
+
+                <h3>1. IP Configuration and Interface Analysis</h3>
+                <p>The first step in any troubleshooting session is identifying your own address. Is the server getting an IP via DHCP? Is the subnet mask correct? Does the interface have a valid IPv6 link-local address?</p>
+                
+                <ul>
+                  <li><strong>Windows:</strong> The classic <code>ipconfig /all</code> is still the king. For PowerShell fans, <code>Get-NetIPAddress</code> provides object-oriented data that is much easier to script for automated reports.</li>
+                  <li><strong>Linux:</strong> <code>ifconfig</code> is deprecated. Modern admins use the <strong>iproute2</strong> suite. The command <code>ip addr show</code> (or simply <code>ip a</code>) is the standard. It provides a cleaner view of state, MTU, and multiple IP bindings.</li>
+                </ul>
+
+                <h3>2. Connectivity Testing (Beyond Simple Pings)</h3>
+                <p>While <code>ping</code> tells you if a host is "up," it doesn't tell you if the application is actually listening. Modern security often blocks ICMP (Ping), so you must learn to test specific ports.</p>
+                
+                <p>In 2026, <strong>Test-NetConnection</strong> (Windows) and <strong>nc (Netcat)</strong> (Linux) are the primary tools. If you want to see if a web server is responding on port 443, use:</p>
+                <ul>
+                  <li><strong>Windows:</strong> <code>TNC google.com -Port 443</code></li>
+                  <li><strong>Linux:</strong> <code>nc -zv google.com 443</code></li>
+                </ul>
+
+                <h3>3. Path Tracing and Latency Diagnostics</h3>
+                <p>When "the network is slow," you need to find out where the packets are getting delayed. <strong>Traceroute</strong> helps identify the specific hop (router) where latency spikes or packet loss occurs.</p>
+
+                <div class="highlight-text">
+                  "Pro-Tip: Standard Traceroute uses UDP or ICMP, which many corporate firewalls drop. Use <strong>MTR (My Traceroute)</strong> on Linux or <strong>Pathping</strong> on Windows for a more statistical, long-term view of path health."
+                </div>
+
+                
+
+                <h3>4. Routing Table and Gateway Analysis</h3>
+                <p>If your server has multiple NICs (Network Interface Cards), it might be trying to send traffic out of the wrong gateway. You must be able to inspect and modify the <strong>Kernel Routing Table</strong>.</p>
+                
+                <table class="command-table">
+                  <thead>
+                    <tr>
+                      <th>Action</th>
+                      <th>Windows Command</th>
+                      <th>Linux Command</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>View Routing Table</td>
+                      <td><code>route print</code></td>
+                      <td><code>ip route show</code></td>
+                    </tr>
+                    <tr>
+                      <td>Add Static Route</td>
+                      <td><code>route add 10.0.0.0 mask 255.0.0.0 192.168.1.1</code></td>
+                      <td><code>ip route add 10.0.0.0/8 via 192.168.1.1</code></td>
+                    </tr>
+                    <tr>
+                      <td>Show ARP Cache</td>
+                      <td><code>arp -a</code></td>
+                      <td><code>ip neigh show</code></td>
+                    </tr>
+                    <tr>
+                      <td>Socket Statistics</td>
+                      <td><code>netstat -anob</code></td>
+                      <td><code>ss -tulpn</code></td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <h3>5. DNS Resolution and Debugging</h3>
+                <p>Is the website down, or is your server just unable to find its address? Mastering DNS tools is the difference between a 5-minute fix and a 2-hour outage.</p>
+                <p>While <code>nslookup</code> exists on both, modern Linux admins prefer <code>dig</code> because it provides the full "Answer Section" from the DNS header, including TTL values and Authority records. For Windows, <code>Resolve-DnsName</code> is the PowerShell equivalent that handles DNSSEC and IPv6 lookups flawlessly.</p>
+
+                <div class="tech-summary-box">
+                  <h4>The 2026 Admin's Daily Checklist</h4>
+                  <ul>
+                    <li><strong>ss -tulpn:</strong> (Linux) Check which ports are open and which PID owns them.</li>
+                    <li><strong>Get-NetTCPConnection:</strong> (Windows) Monitor active connections and their state (ESTABLISHED, CLOSE_WAIT).</li>
+                    <li><strong>tcpdump -i eth0:</strong> (Linux) Capture raw packets for deep analysis when logs aren't enough.</li>
+                    <li><strong>curl -Iv:</strong> (Cross-Platform) Fetch HTTP headers to debug load balancer or proxy issues.</li>
+                  </ul>
+                  <hr>
+                  <p class="mb-0"><strong>Conclusion:</strong> Tools change, but the logic remains the same. Whether you are typing <code>ip addr</code> or <code>ipconfig</code>, you are asking the same question. Master the concepts, and the commands will follow naturally.</p>
+                </div>
+              </div>
+
+              <div class="d-flex justify-content-between align-items-center mt-5">
+                <a href="blogs.html" class="btn-resume-style"><i class="bi bi-arrow-left"></i> Back to Blogs</a>
+                <div class="social-links d-flex gap-3">
+                   <a href="#" class="share-linkedin" style="color: var(--accent-color); font-size: 22px;"><i class="bi bi-linkedin"></i></a>
+                   <a href="#" class="share-twitter" style="color: var(--accent-color); font-size: 22px;"><i class="bi bi-twitter-x"></i></a>
+                   <a href="#" class="share-general" style="color: var(--accent-color); font-size: 22px;"><i class="bi bi-share"></i></a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer" class="footer">
+    <div class="container text-center">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Jobaer Hossain</span></strong>. All Rights Reserved
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
+
+</body>
+</html>
